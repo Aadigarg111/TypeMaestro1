@@ -176,14 +176,15 @@
         
         /* Added styles for text input */
         .typing-input {
+            text-transform: lowercase;
             position: absolute;
             width: 100%;
-            padding: 12px;
             background-color: var(--secondary-color);
             color: var(--text-color);
             border: 1px solid var(--accent-color);
             border-radius: 4px;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            padding: 0.8rem;
             outline: none;
         }
         
@@ -686,6 +687,11 @@ typingInput.addEventListener('input', function(e) {
     }
 });
 
+// Ensure input is always lowercase
+typingInput.addEventListener('input', function () {
+    this.value = this.value.toLowerCase(); // Convert input to lowercase
+});
+
 // Handle key press events
 typingInput.addEventListener('keydown', function(e) {
     // Reset game with Alt+Enter
@@ -706,6 +712,47 @@ typingInput.addEventListener('keydown', function(e) {
             wordCompleted = false;
         } else if (currentLetterIndex > 0) {
             // If space is pressed mid-word, mark it as incorrect
+            incorrectWords++;
+            moveToNextWord();
+            this.value = '';
+        }
+    }
+});
+
+// Handle input events
+typingInput.addEventListener('input', function (e) {
+    const inputValue = this.value.trim(); // Get the current input value
+    const currentWord = wordElements[currentWordIndex]; // Get the current word
+
+    // Check if the spacebar is pressed
+    if (inputValue.endsWith(' ')) {
+        const typedWord = inputValue.trim(); // Remove trailing space
+        this.value = ''; // Clear the input field
+
+        // Check if the typed word matches the current word
+        if (typedWord === currentWord.text) {
+            currentWord.element.classList.add('correct-word'); // Mark as correct
+            correctWords++;
+        } else {
+            currentWord.element.classList.add('incorrect-word'); // Mark as incorrect
+            incorrectWords++;
+        }
+
+        // Move to the next word
+        moveToNextWord();
+    }
+});
+
+// Handle key press events
+typingInput.addEventListener('keydown', function (e) {
+    if (e.key === ' ') {
+        e.preventDefault(); // Prevent default space behavior
+        if (wordCompleted) {
+            correctWords++;
+            moveToNextWord();
+            this.value = '';
+            wordCompleted = false;
+        } else if (currentLetterIndex > 0) {
             incorrectWords++;
             moveToNextWord();
             this.value = '';
