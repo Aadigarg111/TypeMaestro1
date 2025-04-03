@@ -256,6 +256,119 @@
                 gap: 1rem;
             }
         }
+
+        /* General responsive styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Ensure main content adjusts to screen size */
+        main {
+            padding: 1rem;
+            width: 90%; /* Adjust width for smaller screens */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Responsive header */
+        header {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        /* Adjust button sizes for smaller screens */
+        .btn {
+            padding: 0.5rem 0.8rem;
+            font-size: 1rem;
+        }
+
+        /* Responsive stats section */
+        .stats {
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Responsive word display */
+        .word-display {
+            font-size: 1rem;
+            padding: 1rem;
+            min-height: 100px;
+        }
+
+        /* Responsive typing input */
+        .typing-input {
+            font-size: 1rem;
+            padding: 0.8rem;
+        }
+
+        /* Responsive modal */
+        .modal-content {
+            width: 90%;
+            max-width: 500px;
+        }
+
+        /* Media query for smaller devices (e.g., phones) */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .word-display {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+
+            .typing-input {
+                font-size: 0.9rem;
+                padding: 0.6rem;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.6rem;
+            }
+        }
+
+        /* Media query for very small devices (e.g., narrow phones) */
+        @media (max-width: 480px) {
+            .word-display {
+                font-size: 0.8rem;
+                padding: 0.5rem;
+            }
+
+            .typing-input {
+                font-size: 0.8rem;
+                padding: 0.4rem;
+            }
+
+            .btn {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
