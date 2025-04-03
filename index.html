@@ -36,11 +36,13 @@
             font-size: 1.8rem;
             font-weight: bold;
             color: var(--primary-color);
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
         }
         
         .nav-buttons {
-            display: flex;
-            gap: 1rem;
+            display: none;
         }
         
         .btn {
@@ -62,8 +64,9 @@
         }
         
         .user-controls {
-            display: flex;
-            gap: 0.5rem;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
         }
         
         main {
@@ -374,16 +377,9 @@
 <body>
     <header>
         <div class="logo">TypeMaestro</div>
-        <div class="nav-buttons">
-            <button class="btn btn-primary" id="practice-btn">Practice</button>
-            <button class="btn" id="learn-btn">Learn</button>
-        </div>
         <div class="user-controls">
             <button class="btn" id="history-btn">
                 <i class="fas">📊</i> History
-            </button>
-            <button class="btn" id="settings-btn">
-                <i class="fas">⚙️</i>
             </button>
         </div>
     </header>
@@ -391,15 +387,15 @@
     <main>
         <div class="timer-options">
             <button class="btn timer-option" data-time="15">15s</button>
-            <button class="btn timer-option option-active" data-time="30">30s</button>
+            <button class="btn timer-option option-active" data-time="30">30s</button> <!-- Default selected -->
             <button class="btn timer-option" data-time="60">60s</button>
             <button class="btn timer-option" data-time="120">120s</button>
         </div>
         
         <div class="difficulty-options">
-            <button class="btn difficulty-option option-active" data-type="words">Words</button>
+            <button class="btn difficulty-option" data-type="words">Words</button>
             <button class="btn difficulty-option" data-type="quotes">Quotes</button>
-            <button class="btn difficulty-option" data-type="easy">Easy</button>
+            <button class="btn difficulty-option option-active" data-type="easy">Easy</button> <!-- Default selected -->
             <button class="btn difficulty-option" data-type="normal">Normal</button>
             <button class="btn difficulty-option" data-type="hard">Hard</button>
         </div>
@@ -536,8 +532,8 @@ let correctLetters = 0;
 let incorrectLetters = 0;
 let timer;
 let remainingTime = 30;
-let selectedTime = 30;
-let gameMode = 'words';
+let selectedTime = 30; // Default to 30 seconds
+let gameMode = 'easy'; // Default to easy mode
 let wordElements = [];
 let startTime;
 let typingHistory = JSON.parse(localStorage.getItem('typingHistory')) || [];
