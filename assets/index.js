@@ -41738,7 +41738,7 @@ const RK = U.memo(({
                        target: "_blank",
                        rel: "noopener noreferrer",
                        className: "hover:text-indigo-400 transition-colors ml-1 font-medium",
-                       children: "Aadi"
+                       children: "Aadi Garg"
                     })]
                  }), u.jsx("a", {
                     href: "https://github.com/aadigarg111",
