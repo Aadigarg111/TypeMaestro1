@@ -2673,7 +2673,7 @@
 
 	.to-fuchsia-500 {
 		--tw-gradient-to: var(--color-fuchsia-500);
-		--tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from)var(--tw-gradient-from-position), var (--tw-gradient-to)var(--tw-gradient-to-position))
+		--tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from)var(--tw-gradient-from-position), var(--tw-gradient-to)var(--tw-gradient-to-position))
 	}
 
 	.to-fuchsia-500\/15 {
@@ -4137,6 +4137,84 @@
 		outline-style: none
 	}
 
+	@media (max-width: 600px) {
+		html, body {
+			font-size: 15px;
+			padding: 0;
+			margin: 0;
+			overflow-x: hidden;
+		}
+		.min-h-screen, .w-screen {
+			min-height: 100dvh !important;
+			width: 100vw !important;
+		}
+		.max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl, .max-w-full {
+			max-width: 100vw !important;
+			padding-left: 0.5rem !important;
+			padding-right: 0.5rem !important;
+		}
+		.typing-area {
+			padding: 0.5rem !important;
+			font-size: 1.1rem !important;
+			min-height: 120px !important;
+			max-height: 30dvh !important;
+			overflow-y: auto !important;
+		}
+		input[type="text"], .mobile-input, input.w-full {
+			font-size: 1.1rem !important;
+			padding: 0.9rem 1rem !important;
+			min-height: 48px !important;
+			border-radius: 0.7rem !important;
+			width: 100% !important;
+			box-sizing: border-box;
+		}
+		button, .btn, .px-6, .py-3 {
+			min-width: 44px;
+			min-height: 44px;
+			font-size: 1rem !important;
+			border-radius: 0.7rem !important;
+			padding: 0.7rem 1.2rem !important;
+		}
+		.options-bar, .p-5, .p-6, .p-4, .px-4, .px-6, .px-2, .sm\:px-4 {
+			padding-left: 0.5rem !important;
+			padding-right: 0.5rem !important;
+			padding-top: 0.5rem !important;
+			padding-bottom: 0.5rem !important;
+		}
+		.mb-2, .mb-3, .mb-4, .mb-6, .mb-8, .mb-10 {
+			margin-bottom: 0.7rem !important;
+		}
+		.flex, .flex-col, .flex-row {
+			flex-wrap: wrap !important;
+		}
+		.text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl {
+			font-size: 1.1rem !important;
+		}
+		.stat {
+			min-width: 80px !important;
+			font-size: 1rem !important;
+		}
+		.rounded-xl, .rounded-2xl, .rounded-3xl, .rounded-lg {
+			border-radius: 0.7rem !important;
+		}
+		.shadow-lg, .shadow-xl {
+			box-shadow: 0 2px 8px rgba(0,0,0,0.10) !important;
+		}
+		.overflow-x-auto, .overflow-auto {
+			overflow-x: auto !important;
+		}
+		.footer, footer {
+			font-size: 0.95rem !important;
+			padding: 0.5rem 0.2rem !important;
+		}
+		.options-bar {
+			min-height: 40px !important;
+		}
+		.animate-fadeIn {
+			animation: none !important;
+		}
+	}
+
 	@media (width>=40rem) {
 		.sm\:visible {
 			visibility: visible
@@ -4955,8 +5033,8 @@ button:focus-visible {
 
 	75%,
 	to {
-		opacity: 0;
-		transform: scale(2)
+		transform: scale(1.5);
+		opacity: 0
 	}
 }
 
