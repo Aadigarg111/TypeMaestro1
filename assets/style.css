@@ -168,22 +168,6 @@
 	}
 }
 
-@media (max-width: 768px) {
-    #root {
-        display: none;
-    }
-
-    body::before {
-        content: "This website is best viewed on a desktop browser.";
-        display: block;
-        text-align: center;
-        padding: 20px;
-        font-size: 1.2em;
-        color: #333;
-        margin-top: 50px;
-    }
-}
-
 @layer base {
 
 	*,
