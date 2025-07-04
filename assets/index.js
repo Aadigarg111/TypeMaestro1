@@ -35121,7 +35121,7 @@ function createTask(taskData) {
                         shadow-[0_0_15px_rgba(249,115,22,0.5)] hover:shadow-[0_0_20px_rgba(249,115,22,0.7)] transition-shadow duration-300`,
                  children: u.jsx("img", {
                     src: "./logo.png",
-                    alt: "TypeMaster Logo",
+                    alt: "TypeMS Logo",
                     className: "w-full h-full object-cover"
                  })
               }), u.jsxs("h1", {
