@@ -35076,7 +35076,7 @@ function createTask(taskData) {
         settings: !1,
         reset: !1,
         records: !1
-     }), _ = "TypeMaster", M = "KBKungFu";
+     }), _ = "TypeMS";
      G.useEffect(() => {
         if (j) {
            v(h ? M : _);
